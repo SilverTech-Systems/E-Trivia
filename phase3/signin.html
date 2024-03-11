@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>QuestionOfWisdom</title>
+		<title>SignIn</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>	
@@ -22,7 +22,7 @@
 				</nav>
 				<div class="active">
 					<div id="myLinks">
-						<a href="login.html">Log-in</a><br>
+						<a href="login.html">Log in</a><br>
 						<a href="home.html">Home</a><br>
 						<a href="leaderboard.html">Leaderboard</a><br>
 						<a href="profile.html">Profile</a>
@@ -33,30 +33,30 @@
 				<div class="wrapper">
 					<header>
 						<HR width=120&percnt;  size=8 class="line">
-						
+							<div class = "hero-content">
+								<h1> Log in </h1>
+								<h2>Username</h2>
+								<div>
+									<input type="text" id="username" name="username" required>
+								</div>
+								<h2>Password</h2>
+								<div>
+									<input type="password" id="password" name="password" required>
+								</div>
+                                <h2>Repeat Password</h2>
+								<div>
+									<input type="password" id="password" name="password" required>
+								</div>
+								<br>
+								<div>
+									<input type="submit" value="Submit" class ="submit-button">
+								</div>
+							</div>
 					</header>
-					<div id="question-container">
-						<p id="question" style="text-align: center;">Pitanje?</p>
-						<div class="answers">
-						  <button class="answer" onclick="selectAnswer(event)">Odgovor 1</button>
-						  <button class="answer" onclick="selectAnswer(event)">Odgovor 2</button>
-						  <button class="answer" onclick="selectAnswer(event)">Odgovor 3</button>
-						  <button class="answer" onclick="selectAnswer(event)">Odgovor 4</button>
-						</div>
-					</div>
 				</div>
 			</div>
 			
 			<script>
-				function selectAnswer(event) {
-					var answers = document.getElementsByClassName('answer');
-
-					for (var i = 0; i < answers.length; i++) {
-						answers[i].classList.remove('active');
-					}
-
-					event.target.classList.add('active');
-				}
 				function myFunction()
 				{
 					var x = document.getElementById("myLinks");

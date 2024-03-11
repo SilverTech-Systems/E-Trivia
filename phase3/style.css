@@ -139,8 +139,12 @@ body {
 /* Style the active link (or home/logo) */
 .active {
 	/*position: relative;*/
-  height: 18vh;
-  width: 200vw;
+  height: 17vh;
+  background-color: #223240;
+}
+
+.mmtr{
+  height: 20.7vh;
   background-color: #223240;
 }
 /*.nav-container {
@@ -172,6 +176,18 @@ body {
 	-moz-transform: translate(-50%, 0%);
 	transform: translate(-50%, 0%);
 }
+.center_mm{
+  filter: saturate(1.2);
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	height: 15vh;
+	position: absolute;
+	top:3vh;
+	left: 51.6%;
+	-webkit-transform: translate(-50%, 0%);
+	-moz-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+}
 
 .wrapper {
 
@@ -188,7 +204,6 @@ nav{
 	display: flex;/*relative;*/
 	align-items: center;
 	justify-content: space-between;
-	/*height: -72px;*/
 }
 
 .line
@@ -202,7 +217,6 @@ nav{
 .header-container {
   width: 100vw;
   height: 100vh;
-  /*background: url("");*/
   background-image: linear-gradient(to right, #905EFF , #09F9E9);
   filter: saturate(1.2);
   background-repeat: no-repeat;
@@ -271,8 +285,9 @@ header a {
 }
 header h2 {
 	font-size: 1.7vh;
-	line-height: 8vh;
+	line-height: 4vh;
 	margin-top: 1vh;
+  color: white;
 	text-align:center;
 }
 header h3{
@@ -354,21 +369,213 @@ header h3{
 }
 
 .gradient-button {
-            background-image: linear-gradient(to right, #09F9E9 , #905EFF);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            display: block; 
-            font-size: 30px;
-            width: 400px; 
-            margin: 10px auto; 
-            transition-duration: 0.4s;
-            border-radius: 20px;
-        }
+      background-image: linear-gradient(to right, #09F9E9 , #905EFF);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block; 
+      font-size: 30px;
+      width: 400px; 
+      margin: 10px auto; 
+      transition-duration: 0.4s;
+      border-radius: 20px;
+}
+
+.button-leaderboard{
+  background-image: linear-gradient(to left, #09F9E9 , #905EFF);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block; 
+  font-size: 20px;
+  width: 150px; 
+  margin: 10px auto; 
+  transition-duration: 0.4s;
+  border-radius: 20px;
+}
+
+.submit-button {
+  background-image: linear-gradient(to right, #09F9E9 , #905EFF);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block; 
+  font-size: 20px;
+  width: 150px; 
+  margin: 10px auto; 
+  transition-duration: 0.4s;
+  border-radius: 20px;
+}
+
 
 .gradient-button:hover {
 	background-image: linear-gradient(to right, #09F9E9 , #905EFF);
+}
+
+#password, #username {
+  border-color: #223240;
+  border-radius: 8px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: px solid #ddd;
+  font:bold;
+  padding: 8px;
+  text-align: left;
+  font-family: Campton-Campton-ExtraLight;
+}
+th {
+  color: white;
+  font-family: Campton-Bold;
+}
+.button:hover {
+  background-color: #09F9E9;
+}
+tr:nth-child(even) {
+  background-color: #905EFF;
+  font-family: Campton-Campton-ExtraLight;
+}
+
+
+.leaderboard_choice{
+  width: 30%;
+  margin-left:36%;
+  margin-top:1vh;
+	align-items: center;
+	position: absolute;
+  display: flex;
+
+  gap:1vh;
+}
+
+.tablediv{
+  height: 30vh;
+	align-items: center;
+	position: absolute;
+  display: flex;
+  margin: auto;
+  margin-left:42%;
+  width: 20%;
+}
+
+#logicLinkContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 80%; 
+  margin: auto;
+  gap:10vh;
+  margin-top:5vh
+}
+
+#leftWords, #rightWords {
+  display: flex;
+  flex-direction: column;
+  width: 20vh;
+}
+
+.word, .match {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  background-color: rgba(249, 249, 249, 0.5); 
+  flex: 1 1 calc(50% - 12px);
+  box-sizing: border-box; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  height: 50px; 
+  border-radius: 20px; 
+  font-size: 1.5vh;
+  font-family: Campton-Bold;
+  font-weight: 100;
+  color:white;
+
+}
+
+.centered-container {
+  height: 100vh; /* Promenjeno sa 100% na 100vh za punu visinu viewport-a */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.quiz-container {
+  text-align: center;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+.options {
+  margin-top: 20px;
+}
+.row {
+  margin-bottom: 10px;
+}
+.option {
+  margin: 5px;
+  padding: 10px;
+}
+
+#question-container {
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 1.5vh;
+  font-family: Campton-Bold;
+  font-weight: 100;
+  color:white;
+}
+
+.answers {
+  margin-top:2vh;
+  margin-left: 24vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 50vh;
+  align-items: stretch; 
+}
+
+.answer {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #ddd; 
+  background-color: rgba(249, 249, 249, 0.5); 
+  flex: 1 1 calc(50% - 12px); 
+  box-sizing: border-box; 
+  transition: background-color 0.3s, border-color 0.3s; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 50px;
+  border-radius: 20px;
+  font-size: 1.5vh;
+  font-family: Campton-Bold;
+  font-weight: 100;
+  color:white;
+}
+
+.answer.active {
+  border-color: #007bff; /* Promenjena boja okvira za aktivno dugme */
+  background-color: rgba(231, 243, 255, 0.5); /* Promenjena providna boja pozadine za aktivno dugme */
 }

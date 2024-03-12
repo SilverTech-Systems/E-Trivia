@@ -36,14 +36,16 @@
 				<div class="wrapper">	
 					<header>
 						<HR width=120&percnt;  size=8 class="line">
-					
-					<div class="leaderboard_choice"> 
-						<button class="button-leaderboard">Daily</button>
-						<button class="button-leaderboard">Weekly</button>
-						<button class="button-leaderboard">Monthly</button>
+					</header>
+					<div class="leaderboard_container"> 
+						<button class="answer" type="button" onclick="selectAnswer(event)">Daily</button>
+						<button class="answer" type="button" onclick="selectAnswer(event)">Weekly</button>
+						<button class="answer" type="button" onclick="selectAnswer(event)">Monthly</button>
 					</div>
-					<div class="tablediv">
+					<hr>
+					<div class="leaderboard_table"> 
 						<table>
+							<tbody>
 							<tr>
 								<th>Rank</th>
 								<th>Name</th>
@@ -69,12 +71,22 @@
 								<td>Mihajlo</td>
 								<td>12</td>
 								</tr>
+							</tbody>
 						</table>
 					</div>
-					</header>
+					<hr>
 				</div>
 			</div>
 			<script>
+				function selectAnswer(event) {
+					var answers = document.getElementsByClassName('answer');
+
+					for (var i = 0; i < answers.length; i++) {
+						answers[i].classList.remove('active_leaderboard');
+					}
+
+					event.target.classList.add('active_leaderboard');
+				}
 				function myFunction()
 				{
 					var x = document.getElementById("myLinks");

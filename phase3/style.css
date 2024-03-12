@@ -430,23 +430,27 @@ header h3{
 table {
   width: 100%;
   border-collapse: collapse;
+  margin: auto; /* Centrira tabelu horizontalno */
 }
+
 th, td {
-  border: px solid #ddd;
-  font:bold;
-  padding: 8px;
   text-align: left;
-  font-family: Campton-Campton-ExtraLight;
-}
-th {
+  padding: 8px;
+  font-size: 1.5vh;
+  font-family: 'Campton-Campton-ExtraLight', sans-serif;
+  font-weight: 100;
   color: white;
+}
+
+th {
   font-family: Campton-Bold;
 }
+
 .button:hover {
   background-color: #09F9E9;
 }
 tr:nth-child(even) {
-  background-color: #905EFF;
+  background-color: #915effab;
   font-family: Campton-Campton-ExtraLight;
 }
 
@@ -506,6 +510,16 @@ tr:nth-child(even) {
   color:white;
 
 }
+.selected_link {
+  border-color: #3498db; /* Promenite boju obruba za označeni element */
+  background-color: rgba(52, 152, 219, 0.5); /* Promenite boju pozadine za označeni element */
+  color: #fff; /* Promenite boju teksta za označeni element */
+}
+.connected {
+  background-color: rgba(0, 255, 0, 0.5); /* Providno zelena */
+  border-color: #223240; /* Jača nijansa zelene za obrub */
+  color: #223240; /* Promena boje teksta ako je potrebno */
+}
 
 .centered-container {
   height: 100vh; /* Promenjeno sa 100% na 100vh za punu visinu viewport-a */
@@ -540,42 +554,256 @@ tr:nth-child(even) {
   text-align: center;
   margin-top: 2vh;
   font-size: 1.5vh;
-  font-family: Campton-Bold;
+  font-family: 'Campton-Bold', sans-serif;
   font-weight: 100;
-  color:white;
+  color: white;
 }
 
 .answers {
-  margin-top:2vh;
-  margin-left: 24vh;
+  margin-top: 2vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  max-width: 50vh;
-  align-items: stretch; 
+  justify-content: center; /* Centrira dugmiće unutar kontejnera */
+  align-items: center; /* Opciono, za vertikalno centriranje ako je potrebno */
 }
 
 .answer {
   margin: 5px;
   padding: 10px;
-  border: 2px solid #ddd; 
-  background-color: rgba(249, 249, 249, 0.5); 
-  flex: 1 1 calc(50% - 12px); 
-  box-sizing: border-box; 
-  transition: background-color 0.3s, border-color 0.3s; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  border: 2px solid #ddd;
+  background-color: rgba(249, 249, 249, 0.5);
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   border-radius: 20px;
   font-size: 1.5vh;
-  font-family: Campton-Bold;
+  font-family: 'Campton-Bold', sans-serif;
   font-weight: 100;
-  color:white;
+  color: white;
+  text-align: center;
+  width: 30vh; /* Ovo postavlja širinu svakog odgovora. Možete prilagoditi prema potrebi. */
 }
 
 .answer.active {
-  border-color: #007bff; /* Promenjena boja okvira za aktivno dugme */
-  background-color: rgba(231, 243, 255, 0.5); /* Promenjena providna boja pozadine za aktivno dugme */
+  background-color: rgba(0, 255, 0, 0.5); /* Providno zelena */
+  border-color: #223240; /* Jača nijansa zelene za obrub */
+  color: #223240; /* Promena boje teksta ako je potrebno */
 }
+
+.statistics_container header {
+  text-align: center; /* Centrira tekst unutar header-a */
+}
+
+.statistics_container {
+  width: 100%; /* Širina kontejnera */
+  display: flex; /* Koristi Flexbox za poravnanje */
+  flex-direction: column; /* Elementi se slažu jedan ispod drugog */
+  align-items: center; /* Centrira sadržaj po horizontalnoj osi */
+  justify-content: center; /* Centrira sadržaj po vertikalnoj osi, ako je potrebno */
+}
+
+#NumberHunt_averagePoints, #SecretSequence_averagePoints, #LogicLink_averagePoints, #QuestionOfWisdom_averagePoints, #wins, #losses, #Score{
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 1.5vh;
+  font-family: 'Campton-Campton-ExtraLight', sans-serif;
+  font-weight: 100;
+  color: white;
+}
+
+.answer.active_leaderboard {
+  border-color: #3498db; /* Promenite boju obruba za označeni element */
+  background-color: rgba(52, 152, 219, 0.5); /* Promenite boju pozadine za označeni element */
+  color: #fff; /* Promenite boju teksta za označeni element */
+}
+
+.leaderboard_container {
+  padding: 1vh;
+  display: flex;
+  justify-content: center; /* Centriranje dugmadi */
+}
+
+/* Ako želite da centrirate .leaderboard_table div, koristite ovaj stil */
+.leaderboard_table {
+  width: 100%; /* Ovo će osigurati da tabela zauzima punu širinu roditeljskog diva */
+  display: flex;
+  justify-content: center; /* Ovo će centrirati tabelu unutar diva ako je širina tabele manja od 100% */
+}
+
+
+#numberhunt_game-container {
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 1.5vh;
+  font-family: 'Campton-Bold', sans-serif;
+  font-weight: 100;
+  color: white;
+}
+
+#numberhunt_question {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+#numberhunt_answer {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  border-color: #223240;
+  border-radius: 10px;
+}
+#numberhunt_confirm {
+  background-image: linear-gradient(to right, #09F9E9 , #905EFF);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block; 
+  font-size: 20px;
+  width: 150px; 
+  margin: 10px auto; 
+  transition-duration: 0.4s;
+  border-radius: 20px;
+}
+#numberhunt_number-container {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrira dugmiće unutar kontejnera */
+  align-items: center; /* Opciono, za vertikalno centriranje ako je potrebno */
+}
+
+
+.numberhunt_number {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  background-color: rgba(249, 249, 249, 0.5);
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 1.5vh;
+  font-family: 'Campton-Bold', sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  width: 30vh; /* Ovo postavlja širinu svakog odgovora. Možete prilagoditi prema potrebi. */
+}
+
+#numberhunt_operation-container {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrira dugmiće unutar kontejnera */
+  align-items: center; /* Opciono, za vertikalno centriranje ako je potrebno */
+}
+
+
+.numberhunt_operation {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  background-color: rgba(249, 249, 249, 0.5);
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50px;
+  font-size: 1.5vh;
+  font-family: 'Campton-Bold', sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+
+}
+
+
+#secretsequence_game-container {
+  text-align: center;
+  margin-top: 2vh;
+  font-size: 1.5vh;
+  font-family: 'Campton-Bold', sans-serif;
+  font-weight: 100;
+  color: white;
+}
+
+#secretsequence_question {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+#secretsequence_answer {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  border-color: #223240;
+  border-radius: 10px;
+}
+#secretsequence_confirm {
+  background-image: linear-gradient(to right, #09F9E9 , #905EFF);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block; 
+  font-size: 20px;
+  width: 150px; 
+  margin: 10px auto; 
+  transition-duration: 0.4s;
+  border-radius: 20px;
+}
+#secretsequence_number-container, #secretsequence_operation-container {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.secretsequence_number, .secretsequence_operation {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  background-color: rgba(249, 249, 249, 0.5);
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 1.5vh;
+  font-family: 'Campton-Bold', sans-serif;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+}
+
+.secretsequence_number {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 100px; /* Ovo čini dugmad za operacije kružnim. */
+  margin-bottom: 15vh;
+  margin-top: 2vh;
+}
+
+.secretsequence_operation {
+  height: 6vh;
+  width: 6vh;
+  border-radius: 50px; /* Ovo čini dugmad za operacije kružnim. */
+
+}
+

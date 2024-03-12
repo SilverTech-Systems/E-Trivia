@@ -20,11 +20,14 @@
 				<div id="logicLinkContainer">
 
 					<div id="leftWords">
-						<div class="word" data-target="1">Spojnica11</div>
+						<div class="word" data-target="1" >Spojnica11</div>
 						<div class="word" data-target="2">Spojnica12</div>
 						<div class="word" data-target="3">Spojnica13</div>
 						<div class="word" data-target="4">Spojnica14</div>
 						<div class="word" data-target="5">Spojnica15</div>
+						<div class="word" data-target="5">Spojnica16</div>
+						<div class="word" data-target="5">Spojnica17</div>
+						<div class="word" data-target="5">Spojnica18</div>
 					</div>
 
 
@@ -34,9 +37,61 @@
 						<div class="match" data-id="3">Spojnica23</div>
 						<div class="match" data-id="4">Spojnica24</div>
 						<div class="match" data-id="5">Spojnica25</div>
+						<div class="match" data-id="5">Spojnica26</div>
+						<div class="match" data-id="5">Spojnica27</div>
+						<div class="match" data-id="5">Spojnica28</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</body>
+	<script>
+
+		document.addEventListener('DOMContentLoaded', function () {
+			let selectedLeft = null; // Čuva trenutno selektovanu spojnicu sa leve strane
+
+			const leftWords = document.querySelectorAll('#leftWords .word');
+			const rightWords = document.querySelectorAll('#rightWords .match');
+
+			// Funkcija za odabir leve spojnice
+			leftWords.forEach(word => {
+				word.addEventListener('click', function () {
+					// Ako je spojnica već spojena, ignorisi dalje akcije
+					if (this.classList.contains('connected')) return;
+
+					// Deselektuj ako je ista spojnica kliknuta dva puta
+					if (selectedLeft === this) {
+						this.classList.remove('selected_link');
+						selectedLeft = null;
+					} else {
+						// Promeni selekciju
+						if (selectedLeft) {
+							selectedLeft.classList.remove('selected_link'); // Deselektuj prethodnu
+						}
+						this.classList.add('selected_link');
+						selectedLeft = this; // Postavi trenutnu kao selektovanu
+					}
+				});
+			});
+
+			// Funkcija za odabir desne spojnice i "spajanje"
+			rightWords.forEach(match => {
+				match.addEventListener('click', function () {
+					// Proverava da li je izabrana leva spojnica i da li su obe (leva i desna) nespojene
+					if (selectedLeft && !this.classList.contains('connected') && !selectedLeft.classList.contains('connected')) {
+						// "Spoji" selektovane spojnice
+						selectedLeft.classList.add('connected');
+						this.classList.add('connected');
+
+						// Opcionalno: Dodaj logiku za proveru da li su spojnice ispravno uparene
+
+						// Resetuj selekciju
+						selectedLeft = null;
+
+						// Ukloni klasu 'selected' sa svih levo izabranih, sada kada su spojene
+						leftWords.forEach(word => word.classList.remove('selected_link'));
+					}
+				});
+			});
+		});</script>
 </html>

@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Admin Profile</title>
+		<title>Admin Add QOW</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>	
@@ -19,15 +19,40 @@
 				<div class="wrapper">
 					<header>
 						<HR width=120&percnt;  size=8 class="line">
-							<div class = "hero-content">
-                                <br>
-								<div>
-									<a href="admin_add_logiclink.html" class="gradient-button">Add Link</a>
-                                    <a href="admin_remove_logiclink.html" class="gradient-button">Remove Link</a>
-								</div>
-								<br>
-							</div>
 					</header>
+                    <br>
+                    
+                    <div>
+                        <label for="QuestionQOW" class="QOWlabel">Question:</label>
+                        <br><br>
+                        <input type="text" id="QuestionQOW" name="QuestionQOW" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="CorrectAnswer" class="QOWlabel">Correct Answer: </label>
+                        <br><br>
+                        <input type="text" id="CorrectAnswer" name="CorrectAnswer" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="WrongAnswer1" class="QOWlabel">Wrong answer 1:</label>
+                        <br><br>
+                        <input type="text" id="WrongAnswer1" name="WrongAnswer1" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="WrongAnswer2" class="QOWlabel">Wrong answer 2:</label>
+                        <br><br>
+                        <input type="text" id="WrongAnswer2" name="WrongAnswer2" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="WrongAnswer3" class="QOWlabel">Wrong answer 3:</label>
+                        <br><br>
+                        <input type="text" id="WrongAnswer3" name="WrongAnswer3" required>
+                    </div>
+                    <br>
+                    <button type="submit" class="submit-button">Submit</button>
 				</div>
 			</div>
 		</form>

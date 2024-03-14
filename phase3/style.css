@@ -72,8 +72,8 @@ body {
 }
 
 .topnav .bar1, .bar2, .bar3 {
-  width: 2em;/*28px;*/
-  height: 0.4vh;/*4px;*/
+  width: 2em;
+  height: 0.4vh;
   background-color: white;
   margin: 0.5vh 0;
   -webkit-transition: 0.4s;
@@ -81,22 +81,20 @@ body {
   transition: 0.4s;
 }
 
-/* Rotate first bar */
 .topnav .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-0.3em, 0.55em);   /*(-6px, 4px) ;*/
-  -moz-transform: rotate(-45deg) translate(-0.3em, 0.55em);  /*(-6px, 4px) ;*/
+  -webkit-transform: rotate(-45deg) translate(-0.3em, 0.55em);   
+  -moz-transform: rotate(-45deg) translate(-0.3em, 0.55em);  
   transform: rotate(-45deg) translate(-0.3em, 0.55em);
 }
 
-/* Fade out the second bar */
 .topnav .change .bar2 {
   opacity: 0;
 }
 
-/* Rotate last bar */
+
 .topnav .change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-0.3em, -0.4em);/*(-6px, -6px) ;*/
-  -moz-transform: rotate(45deg)  translate(-0.3em, -0.4em);  /*(-6px, -6px) ;*/
+  -webkit-transform: rotate(45deg) translate(-0.3em, -0.4em);
+  -moz-transform: rotate(45deg)  translate(-0.3em, -0.4em); 
   transform: rotate(45deg)  translate(-0.3em, -0.4em);
 }
 
@@ -107,38 +105,33 @@ body {
   width:100vw;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
 .topnav #myLinks {
   display: none;
 }
 
-/* Style navigation menu links */
 .topnav a {
   color: white;
-  padding: 0.1vh 0.5vw;/*14px 16px;*/
+  padding: 0.1vh 0.5vw;
   text-decoration: none;
   font-size: 1.7vh;
   display: relative;
 }
 
-/* Style the hamburger menu */
+
 .topnav a.icon {
   background: #223240;
   display: flex;
-  /*position: relative;*/
-  /*right: 0;*/
+
   top:0;
 }
 
-/* Add a grey background color on mouse-over */
+
 .topnav a:hover {
-  /*background-color: #ddd;
-  color: gray;*/
+
 }
 
-/* Style the active link (or home/logo) */
 .active {
-	/*position: relative;*/
+
   height: 17vh;
   background-color: #223240;
 }
@@ -147,22 +140,7 @@ body {
   height: 20.7vh;
   background-color: #223240;
 }
-/*.nav-container {
-  background: #223240;
-  width: 100vw;
-  height: 23vh;
-}
 
-
-
-
-.nav-container {
-	background: #223240;
-	width: 100vw;
-	height: 23vh;
-	display: flex; /*relative;
-	position: absolute;
-}*/
 
 .center{
 	filter: saturate(1.2);
@@ -201,17 +179,16 @@ body {
 }
 
 nav{
-	display: flex;/*relative;*/
+	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
 .line
 {
-	/*top: 10vh;*/
+
 	background-image: linear-gradient(to right, #0BFFEC ,#8354f8 );
-	/*display: flex;*/
-	/*position: relative;*/
+
 }
 
 .header-container {
@@ -298,12 +275,12 @@ header h3{
 }
 
 .container_checkbox {
-  /*display: block;*/
+
   position: relative;
   padding: 1vh 0.1vw 1vh 0.1vw;
   left: 0%;
   width: 2vw;
-  /*margin-bottom: 12px;*/
+
   cursor: pointer;
   margin-right: 2vh;
   font-size: 3vh;
@@ -312,7 +289,7 @@ header h3{
   user-select: none;
 }
 
-/* Hide the browser's default radio button */
+
 .container_checkbox input {
   position: absolute;
   opacity: 0;
@@ -321,7 +298,7 @@ header h3{
   width: 0;
 }
 
-/* Create a custom radio button */
+
 .checkmark {
   position: absolute;
   top: 27.5%;
@@ -334,29 +311,29 @@ header h3{
   border-radius: 50%;
 }
 
-/* On mouse-over, add a grey background color */
+
 .container_checkbox:hover input ~ .checkmark {
   background-color: white;
 }
 
-/* When the radio button is checked, add a blue background */
+
 .container_checkbox input:checked ~ .checkmark {
   background-color: #8354f8;
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
+
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
+
 .container_checkbox input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
+
 .container_checkbox .checkmark:after {
   top: 27.7%;
   width: 1vh;
@@ -421,7 +398,7 @@ header h3{
 	background-image: linear-gradient(to right, #09F9E9 , #905EFF);
 }
 
-#password, #username {
+#password, #username, #QuestionQOW, #CorrectAnswer, #WrongAnswer1, #WrongAnswer2, #WrongAnswer3, #addLL{
   border-color: #223240;
   border-radius: 8px;
 }
@@ -430,7 +407,7 @@ header h3{
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: auto; /* Centrira tabelu horizontalno */
+  margin: auto; 
 }
 
 th, td {
@@ -511,18 +488,18 @@ tr:nth-child(even) {
 
 }
 .selected_link {
-  border-color: #3498db; /* Promenite boju obruba za označeni element */
-  background-color: rgba(52, 152, 219, 0.5); /* Promenite boju pozadine za označeni element */
-  color: #fff; /* Promenite boju teksta za označeni element */
+  border-color: #3498db; 
+  background-color: rgba(52, 152, 219, 0.5); 
+  color: #fff; 
 }
 .connected {
-  background-color: rgba(0, 255, 0, 0.5); /* Providno zelena */
-  border-color: #223240; /* Jača nijansa zelene za obrub */
-  color: #223240; /* Promena boje teksta ako je potrebno */
+  background-color: rgba(0, 255, 0, 0.5); 
+  border-color: #223240; 
+  color: #223240; 
 }
 
 .centered-container {
-  height: 100vh; /* Promenjeno sa 100% na 100vh za punu visinu viewport-a */
+  height: 100vh; 
   margin: 0;
   display: flex;
   justify-content: center;
@@ -564,8 +541,8 @@ tr:nth-child(even) {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; /* Centrira dugmiće unutar kontejnera */
-  align-items: center; /* Opciono, za vertikalno centriranje ako je potrebno */
+  justify-content: center;
+  align-items: center; 
 }
 
 .answer {
@@ -585,25 +562,25 @@ tr:nth-child(even) {
   font-weight: 100;
   color: white;
   text-align: center;
-  width: 30vh; /* Ovo postavlja širinu svakog odgovora. Možete prilagoditi prema potrebi. */
+  width: 30vh; 
 }
 
 .answer.active {
-  background-color: rgba(0, 255, 0, 0.5); /* Providno zelena */
-  border-color: #223240; /* Jača nijansa zelene za obrub */
-  color: #223240; /* Promena boje teksta ako je potrebno */
+  background-color: rgba(0, 255, 0, 0.5);
+  border-color: #223240; 
+  color: #223240; 
 }
 
 .statistics_container header {
-  text-align: center; /* Centrira tekst unutar header-a */
+  text-align: center; 
 }
 
 .statistics_container {
-  width: 100%; /* Širina kontejnera */
-  display: flex; /* Koristi Flexbox za poravnanje */
-  flex-direction: column; /* Elementi se slažu jedan ispod drugog */
-  align-items: center; /* Centrira sadržaj po horizontalnoj osi */
-  justify-content: center; /* Centrira sadržaj po vertikalnoj osi, ako je potrebno */
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
 }
 
 #NumberHunt_averagePoints, #SecretSequence_averagePoints, #LogicLink_averagePoints, #QuestionOfWisdom_averagePoints, #wins, #losses, #Score{
@@ -616,22 +593,22 @@ tr:nth-child(even) {
 }
 
 .answer.active_leaderboard {
-  border-color: #3498db; /* Promenite boju obruba za označeni element */
-  background-color: rgba(52, 152, 219, 0.5); /* Promenite boju pozadine za označeni element */
-  color: #fff; /* Promenite boju teksta za označeni element */
+  border-color: #3498db;
+  background-color: rgba(52, 152, 219, 0.5); 
+  color: #fff; 
 }
 
 .leaderboard_container {
   padding: 1vh;
   display: flex;
-  justify-content: center; /* Centriranje dugmadi */
+  justify-content: center; 
 }
 
-/* Ako želite da centrirate .leaderboard_table div, koristite ovaj stil */
+
 .leaderboard_table {
-  width: 100%; /* Ovo će osigurati da tabela zauzima punu širinu roditeljskog diva */
+  width: 100%; 
   display: flex;
-  justify-content: center; /* Ovo će centrirati tabelu unutar diva ako je širina tabele manja od 100% */
+  justify-content: center; 
 }
 
 
@@ -674,8 +651,8 @@ tr:nth-child(even) {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; /* Centrira dugmiće unutar kontejnera */
-  align-items: center; /* Opciono, za vertikalno centriranje ako je potrebno */
+  justify-content: center; 
+  align-items: center; 
 }
 
 
@@ -696,7 +673,7 @@ tr:nth-child(even) {
   font-weight: 100;
   color: white;
   text-align: center;
-  width: 30vh; /* Ovo postavlja širinu svakog odgovora. Možete prilagoditi prema potrebi. */
+  width: 30vh; 
 }
 
 #numberhunt_operation-container {
@@ -704,8 +681,8 @@ tr:nth-child(even) {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; /* Centrira dugmiće unutar kontejnera */
-  align-items: center; /* Opciono, za vertikalno centriranje ako je potrebno */
+  justify-content: center; 
+  align-items: center; 
 }
 
 
@@ -795,7 +772,7 @@ tr:nth-child(even) {
 .secretsequence_number {
   height: 10vh;
   width: 10vh;
-  border-radius: 100px; /* Ovo čini dugmad za operacije kružnim. */
+  border-radius: 100px; 
   margin-bottom: 15vh;
   margin-top: 2vh;
 }
@@ -803,7 +780,31 @@ tr:nth-child(even) {
 .secretsequence_operation {
   height: 6vh;
   width: 6vh;
-  border-radius: 50px; /* Ovo čini dugmad za operacije kružnim. */
+  border-radius: 50px; 
 
 }
 
+.QOWlabel, .LLlabel{
+  text-align: center;
+  margin-top: 1vh;
+  font-size: 1.5vh;
+  font-family: 'Campton-ExtraLight', sans-serif;
+  color: white;
+}
+
+.container_ll {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.side_ll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3vh;
+}
+.description_ll {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

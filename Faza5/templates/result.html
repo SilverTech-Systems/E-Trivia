@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--Autor: Uroš Rajčić 2021/0540 -->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Results</title>
+		<link rel="stylesheet" href="/static/style.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="/static/result.js"></script>
+	</head>
+	<body>	
+		<form action="/get" target="hidden-form">
+			<div class="topnav">
+				<a href="javascript:void(0);" class="icon">
+					<div class="container" onclick="myFunction1(this); myFunction()">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+					</div>
+				</a>
+				<nav>
+					<a href="/etrivia"><img src="/static/logo2.png" class = "center" alt="etrivia" onclick="window.location.href='/etrivia'"></a>
+				</nav>
+				<div class="active">
+					<div id="myLinks">
+						<a href="/etrivia/login">Log-in</a><br>
+						<a href="/etrivia">Home</a><br>
+						<a href="/etrivia/leaderboard">Leaderboard</a><br>
+						<a href="/etrivia/profile">Profile</a>
+					</div>
+				</div>
+			</div>
+			<div class="nav-container">
+				
+			</div>
+			<div class="header-container">
+				<div class="wrapper">
+					<header>
+						<HR width=120&percnt;  size=8 class="line">
+						
+					</header>
+					<div class="statistics_container">
+						<header><h1>Final Score</h1></header>
+						<header><h2 id="username">{{ username }}</h2></header>
+					</div>
+					<hr>
+					<table>
+						<tbody>
+							<tr>
+								<th>Points on "Number Hunt":</th>
+								<td id="numberhunt" style="font-size: large; font-weight: bold ">123</td>
+							</tr>
+							<tr>
+								<th>Points on "Secret Sequence":</th>
+								<td id="secretsequence" style="font-size: large; font-weight: bold ">123</td>
+							</tr>
+							<tr>
+								<th>Points on "Logic Link":</th>
+								<td id="logiclink" style="font-size: large; font-weight: bold ">123</td>
+							</tr>
+							<tr>
+								<th>Points on "Question of Wisdom":</th>
+								<td id="questionofwisdom" style="font-size: large; font-weight: bold ">123</td>
+							</tr>
+							<tr>
+								<th>Score:</th>
+								<td id="total" style="font-size: large; font-weight: bold ">123</td>
+							</tr>
+                            <tr>
+								<th>Opponent Score:</th>
+								<td id="opponent" style="font-size: large; font-weight: bold ">
+
+                                    <div class = "loader">
+
+                                    </div>
+                                </td>
+							</tr>
+                            <tr>
+								<th>Outcome: </th>
+								<td id="result"  style="font-size: large; font-weight: bold ">
+                                    <div class = "loader">
+
+                                    </div>
+                                </td>
+							</tr>
+						</tbody>
+					</table>
+					<hr>
+				</div>
+			</div>
+			
+			<script>
+				function myFunction()
+				{
+					var x = document.getElementById("myLinks");
+					if (x.style.display === "block")
+					{
+						x.style.display = "none";
+					}
+					else
+					{
+						x.style.display = "block";
+					}
+				}
+				function myFunction1(x) {
+				  x.classList.toggle("change");
+				}
+			</script>
+		</form>
+	</body>
+</html>

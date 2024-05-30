@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!--Autor: Uroš Rajčić 2021/0540 -->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>QuestionOfWisdom</title>
+		<link rel="stylesheet" href="/static/style.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="/static/QoW_mm.js"></script>
+	</head>
+	<body>	
+		<div class="mmtr">		
+			<nav>
+				<img src="/static/logo2.png" class = "center" alt="etrivia">
+			</nav>
+		</div>
+		<div class="header-container">
+			<div class="wrapper">
+				<header>
+					<HR width=120&percnt;  size=8 class="line">
+
+				</header>
+				<div class="statistics_container">
+					<header><h1>Question of Wisdom</h1></header>
+					<header><h2 id = "score-header">Score: </h2></header>
+				</div>
+				<div id="question-container">
+					<p id="question" style="text-align: center;">Pitanje?</p>
+					<div class="answers">
+					  <button class="answer" onclick="selectAnswer(event)">Odgovor 1</button>
+					  <button class="answer" onclick="selectAnswer(event)">Odgovor 2</button>
+					  <button class="answer" onclick="selectAnswer(event)">Odgovor 3</button>
+					  <button class="answer" onclick="selectAnswer(event)">Odgovor 4</button>
+					  <button class="answer" onclick="selectAnswer(event)" id = "ne-znam">Ne znam</button>
+					</div>
+				  </div>
+				  <button class="gradient-button" id="qow_confirm">Confirm</button>
+				  
+
+				  
+			</div>
+		</div>
+		
+		<script>
+			function selectAnswer(event) {
+				var answers = document.getElementsByClassName('answer');
+
+				for (var i = 0; i < answers.length; i++) {
+					answers[i].classList.remove('active');
+				}
+
+				event.target.classList.add('active');
+			}
+		</script>
+	</body>
+</html>

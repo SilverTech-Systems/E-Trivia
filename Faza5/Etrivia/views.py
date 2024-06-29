@@ -14,14 +14,18 @@ from .forms import *
 
 # Create your views here.
 def index(request):
+    # glavna stranica kad se ucita sajt, na svim ovim metodama se prvo poziva leave_game kako bi
+    # sistem znao da je neki korisnik napustio partiju
     leave_game(request)
-    #glavna stranica kad se ucita sajt
+
     return render(request,"home.html",{})
 
 
 import random
 
 def login_request(request: HttpRequest):
+    # Autor : Filip Rinkovec 0463/2019
+    #metoda za login
     form = AuthenticationForm(request=request, data=request.POST or None)
     if form.is_valid():
         username = form.cleaned_data['username']
@@ -170,7 +174,7 @@ def matchmaking(request):
         #user nije ulogovan, ne moze da pristupi
         context = {
             "message":
-                "Dostupno samo registrovanim korisnicima"
+                "Available only to registered users!"
         }
         return render(request,"home.html",context)
 
@@ -181,6 +185,7 @@ def matchmaking(request):
     return render(request,"matchmaking.html",{})
 
 def user_in_game(username):
+    #provera da li je korisnik u partiji
     user = User.objects.all().filter(username=username)[0]
     if Game.objects.all().filter(iduser1 = user,timestarted=None).count() == 0 and Game.objects.all().filter(iduser2 = user,timestarted=None).count() == 0:
         return False
@@ -191,7 +196,7 @@ from django.db.models import Count
 def get_random_question(num,which_class):
     # Autor: Djordje Jovanovic 2021/0293
     #num je broj random brojeva
-    #funkcija vraca num random ulaza iz tabele qow ili LL
+    #funkcija vraca ili random broj pianja za qow ili jedno nasumicno pitanje za LL gde mora da vazi da postoji bar 8 spojnica
     used = set()
     ret = []
     questions = Questionsqow.objects.all()
@@ -201,8 +206,9 @@ def get_random_question(num,which_class):
         max = Questionsqow.objects.count()
     elif (which_class == "ll"):
         annotated_questions = Questionsll.objects.annotate(llfield_count = Count('llfield'))
-        filtered_questions = annotated_questions.filter(llfield_count__gte=8)
+        filtered_questions = annotated_questions.filter(llfield_count__gte=8).order_by("-idll")
         numm = random.randint(0, filtered_questions.count() - 1)
+        #print("QUESTION: " + str(filtered_questions[numm].idll))
         return filtered_questions[numm]
 
     number = random.randint(min,max-1)
@@ -277,7 +283,7 @@ def check_for_match(sender,instance,created,**kwargs):
 
 #Autor: Uroš Rajčić 2021/0540
 def get_numbers(request):
-
+    #metoda koja vraca brojeve za NH igru
     number = random.randint(1, 999)
     
     number1 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9])

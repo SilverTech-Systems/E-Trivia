@@ -3,9 +3,16 @@ from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
 class User(AbstractUser):
+    """
+    Model koji predstavlja registrovanog korisnika
+    """
     idqueue = models.IntegerField(default=0)
     is_banned = models.BooleanField(default=False)
 class Game(models.Model):
+    """
+        Model koji predstavlja multiplayer partiju, sadrzi pitanja koja se dostavljaju obojici igraca, kao i informaciju
+        o stanju igre (da li se ceka pocetak, da li je u toku, da li je zavrsena)
+    """
     idgame = models.AutoField(db_column='IdGame', primary_key=True)  # Field name made lowercase.
     timestarted = models.DateTimeField(db_column='TimeStarted',null = True)  # Field name made lowercase.
     iduser1 = models.ForeignKey(User, models.DO_NOTHING, db_column='IdUser1')  # Field name made lowercase.
@@ -26,9 +33,12 @@ class Game(models.Model):
 
 
 class Llfield(models.Model):
+    """
+    Model koji predstavlja par spojnica za igru LogicLink
+    """
     idllfield = models.AutoField(db_column='IdLLField', primary_key=True)  # Field name made lowercase.
-    left = models.CharField(db_column='Left', max_length=50, default="default")  # Field name made lowercase.
-    right = models.CharField(db_column='Right', max_length=50,default="default")  # Field name made lowercase.
+    left = models.CharField(db_column='Left', max_length=150, default="default")  # Field name made lowercase.
+    right = models.CharField(db_column='Right', max_length=150,default="default")  # Field name made lowercase.
     idll = models.ForeignKey('Questionsll', models.DO_NOTHING, db_column='IdLL')  # Field name made lowercase.
 
     class Meta:
@@ -37,6 +47,10 @@ class Llfield(models.Model):
 
 
 class Multiplayerqueue(models.Model):
+    """
+        Model koji predstavlja red za cekanje na multiplayer partiju
+        kada sistem napravi partiju, on izbacuje korisnike iz queue
+    """
     idqueue = models.AutoField(db_column='IdQueue', primary_key=True)  # Field name made lowercase.
     username = models.CharField(db_column='Username', max_length=18, blank=True, null=True)  # Field name made lowercase.
     timejoined = models.DateTimeField(db_column='TimeJoined', blank=True, null=True)  # Field name made lowercase.
@@ -47,8 +61,11 @@ class Multiplayerqueue(models.Model):
 
 
 class Questionsll(models.Model):
+    """
+        Model koji predstavlja pitanja za partiju LogicLink, ova tabela sadrzi samo prompt
+    """
     idll = models.AutoField(db_column='IdLL', primary_key=True)  # Field name made lowercase.
-    prompt = models.CharField(db_column='Prompt', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    prompt = models.CharField(db_column='Prompt', max_length=200, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = True
@@ -56,12 +73,15 @@ class Questionsll(models.Model):
 
 
 class Questionsqow(models.Model):
+    """
+        Model koji predstavlja pitanja za igru question of wisdom
+    """
     idqow = models.AutoField(db_column='IdQOW', primary_key=True)  # Field name made lowercase.
-    question = models.CharField(db_column='Question', max_length=50)  # Field name made lowercase.
-    correct = models.CharField(db_column='Correct', max_length=50)  # Field name made lowercase.
-    incorrect1 = models.CharField(db_column='Incorrect1', max_length=50)  # Field name made lowercase.
-    incorrect2 = models.CharField(db_column='Incorrect2', max_length=45)  # Field name made lowercase.
-    incorrect3 = models.CharField(db_column='Incorrect3', max_length=45)  # Field name made lowercase.
+    question = models.CharField(db_column='Question', max_length=200)  # Field name made lowercase.
+    correct = models.CharField(db_column='Correct', max_length=100)  # Field name made lowercase.
+    incorrect1 = models.CharField(db_column='Incorrect1', max_length=100)  # Field name made lowercase.
+    incorrect2 = models.CharField(db_column='Incorrect2', max_length=100)  # Field name made lowercase.
+    incorrect3 = models.CharField(db_column='Incorrect3', max_length=100)  # Field name made lowercase.
 
     class Meta:
         managed = True
@@ -69,6 +89,10 @@ class Questionsqow(models.Model):
 
 
 class Result(models.Model):
+    """
+        Model koji predstavlja rezultate multiplayer partije, koji se koriste za statistiku pojedinih korisnika,
+        kao i za rang liste
+    """
     idresult = models.AutoField(db_column='IdResult', primary_key=True)  # Field name made lowercase.
     points1 = models.IntegerField(db_column='Points1')  # Field name made lowercase.
     points2 = models.IntegerField(db_column='Points2')  # Field name made lowercase.
@@ -84,6 +108,10 @@ class Result(models.Model):
         db_table = 'result'
 
 class SecretSequence(models.Model):
+    """
+        Model koji se koristi kako bismo mogli jednostavnije da dostavljamo iste kombinacije
+        za igru secret sequence obojici igraca multiplayer partije
+    """
     idsecret = models.AutoField(db_column='IdSecret', primary_key=True)
     symbol11 = models.IntegerField(db_column='Symbol11')
     symbol12 = models.IntegerField(db_column='Symbol12')
@@ -103,6 +131,9 @@ class SecretSequence(models.Model):
         db_table = 'secretsequence'
 
 class NumberHunt(models.Model):
+    """
+        Model koji postoji iz istog razloga kao i predhodni, ali za igru number hunt
+    """
     idhunt = models.AutoField(db_column='IdHunt', primary_key=True)
     goal_number = models.IntegerField(db_column='GoalNumber')
     number1 = models.IntegerField(db_column='Number1')

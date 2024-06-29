@@ -99,7 +99,7 @@
                     url: $(this).attr('action'),
                     data: $(this).serialize(),
                     success: function(response) {
-                        $('#message').text('Successfully removed Question of the Week!')
+                        $('#message').text('Successfully removed Question of Wisdom!')
                         .css({
                             'color': 'darkgreen',
                             'font-size': '30px',
@@ -112,7 +112,7 @@
                         });
                     },
                     error: function(response) {
-                        $('#message').text('Failed to remove Question of the Week.')
+                        $('#message').text('Failed to remove Question of Wisdom.')
                         .css({
                             'color': 'red',
                             'font-size': '30px',
